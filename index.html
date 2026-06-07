@@ -6,7 +6,7 @@
     <title>ادومستر | سامانه آموزش آنلاین</title>
     <!-- Google Vazirmatn Font -->
     <link href="https://jsdelivr.net" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -48,21 +48,20 @@
                 <nav class="main-nav">
                     <ul class="nav-list">
                         <li><a href="index.html" class="nav-link active">خانه</a></li>
-                        <li><a href="profile.html" class="nav-link">پروفایل</a></li>
-                        <li><a href="courses.html" class="nav-link">دوره‌ها</a></li>
-                        <li><a href="teachers.html" class="nav-link">اساتید</a></li>
-                        <li><a href="blog.html" class="nav-link">وبلاگ</a></li>
+                        <li><a href="#courses-section" class="nav-link">دوره‌ها</a></li>
+                        <li><a href="#instructors-section" class="nav-link">اساتید</a></li>
+                        <li><a href="#blog-section" class="nav-link">وبلاگ</a></li>
                         
                         <!-- Pages Dropdown Menu -->
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle">صفحات <span class="arrow-down"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="about.html">درباره ما</a></li>
-                                <li><a href="contact.html">تماس با ما</a></li>
-                                <li><a href="pricing.html">پلن‌های قیمت‌گذاری</a></li>
-                                <li><a href="faq.html">سوالات متداول</a></li>
-                                <li><a href="login.html">صفحه ورود</a></li>
-                                <li><a href="register.html">صفحه ثبت‌نام</a></li>
+                                <li><a href="pages/about.html">درباره ما</a></li>
+                                <li><a href="pages/contact.html">تماس با ما</a></li>
+                                <li><a href="pages/pricing.html">پلن‌های قیمت‌گذاری</a></li>
+                                <li><a href="pages/faq.html">سوالات متداول</a></li>
+                                <li><a href="pages/login.html">صفحه ورود</a></li>
+                                <li><a href="pages/register.html">صفحه ثبت‌نام</a></li>
                             </ul>
                         </li>
 
@@ -114,7 +113,7 @@
     <!-- ==========================================
        END: HEADER SECTION
        ========================================== -->
-
+<main style="transition: all 300ms ease;">
 <!-- ==========================================
        START: HERO SECTION
        ========================================== -->
@@ -242,7 +241,7 @@
     </section>
 
     <!-- Section 3: Professional Courses Slider -->
-    <section class="courses-section">
+    <section class="courses-section" id="courses-section">
         <div class="courses-header">
             <div class="header-right">
                 <h2>دوره‌های آموزشی محبوب</h2>
@@ -263,7 +262,7 @@
 
                     <!-- کارت دوره ۱ -->
                     <div class="course-card">
-                        <div class="course-thumb" style="background: linear-gradient(135deg, #6366f1, #4f46e5);">
+                        <div class="course-thumb" style="background-image: url('images/react.webp');">
                             <div class="badge discount-badge">۳۰٪ تخفیف</div>
                         </div>
                         <div class="course-content">
@@ -293,7 +292,7 @@
 
                     <!-- کارت دوره ۲ -->
                     <div class="course-card">
-                        <div class="course-thumb" style="background: linear-gradient(135deg, #10b981, #059669);">
+                        <div class="course-thumb" style="background-image: url('images/js.png');">
                             <div class="badge discount-badge">۲۰٪ تخفیف</div>
                         </div>
                         <div class="course-content">
@@ -321,7 +320,7 @@
 
                     <!-- کارت دوره ۳ -->
                     <div class="course-card">
-                        <div class="course-thumb" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                        <div class="course-thumb" style="background-image: url('images/UI\ and\ UX.webp');">
                             <div class="badge discount-badge">۱۵٪ تخفیف</div>
                         </div>
                         <div class="course-content">
@@ -349,7 +348,7 @@
 
                     <!-- کارت دوره ۴ -->
                     <div class="course-card">
-                        <div class="course-thumb" style="background: linear-gradient(135deg, #ec4899, #be185d);">
+                        <div class="course-thumb" style="background-image: url('images/python.jpg');">
                             <div class="badge discount-badge">۲۵٪ تخفیف</div>
                         </div>
                         <div class="course-content">
@@ -377,7 +376,7 @@
 
                     <!-- کارت دوره 5 -->
                     <div class="course-card">
-                        <div class="course-thumb" style="background: linear-gradient(135deg, #ec4899, #be185d);">
+                        <div class="course-thumb" style="background-image: url('images/AI.webp');">
                             <div class="badge discount-badge">۲۵٪ تخفیف</div>
                         </div>
                         <div class="course-content">
@@ -405,7 +404,7 @@
                     
                     <!-- کارت دوره 6 -->
                     <div class="course-card">
-                        <div class="course-thumb" style="background: linear-gradient(135deg, #ec4899, #be185d);">
+                        <div class="course-thumb" style="background-image: url('images/AI.webp');">
                             <div class="badge discount-badge">۲۵٪ تخفیف</div>
                         </div>
                         <div class="course-content">
@@ -542,7 +541,7 @@
     </section>
 
     <!-- بخش معرفی مدرسین برتر -->
-    <section class="instructors-section">
+    <section class="instructors-section" id="instructors-section">
 
         <!-- هدر بخش همراه با دکمه سمت چپ (راست‌چین شده) -->
         <div class="instructors-header">
@@ -687,6 +686,122 @@
         </div>
     </section>
 
+    <!-- بخش وبلاگ و مقالات آموزشی سایت -->
+    <section class="blog-section" id="blog-section" dir="rtl">
+        <div class="blog-container">
+            <span class="blog-sub-title">وبلاگ آموزشی</span>
+            <h2 class="blog-main-title">جدیدترین مقالات و اخبار تکنولوژی</h2>
+
+            <!-- گرید کارت‌های مقالات وبلاگ -->
+            <div class="blog-grid">
+
+                <!-- مقاله اول -->
+                <div class="blog-card">
+                    <div class="blog-img-box">
+                        <img src="images/map.webp" alt="نقشه راه فرانت اند">
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-category">برنامه‌نویسی</span>
+                        <h3 class="blog-title">نقشه راه ورود به دنیای فرانت‌اند در سال ۲۰۲۶</h3>
+                        <p class="blog-excerpt">چگونه یادگیری طراحی وب را از صفر آغاز کنیم و چه مهارت‌هایی برای بازار کار نیاز داریم؟</p>
+                        <div class="blog-footer">
+                            <span class="blog-date">⏱️ ۵ دقیقه مطالعه</span>
+                            <a href="#" class="blog-read-more">ادامه مطلب ←</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مقاله دوم -->
+                <div class="blog-card">
+                    <div class="blog-img-box">
+                        <img src="images/AI.webp" alt="هوش مصنوعی">
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-category">هوش مصنوعی</span>
+                        <h3 class="blog-title">تاثیر هوش مصنوعی بر آینده شغلی توسعه‌دهندگان</h3>
+                        <p class="blog-excerpt">آیا هوش مصنوعی جایگزین برنامه‌نویسان می‌شود؟ بررسی فرصت‌ها و چالش‌های پیش رو.</p>
+                        <div class="blog-footer">
+                            <span class="blog-date">⏱️ ۸ دقیقه مطالعه</span>
+                            <a href="#" class="blog-read-more">ادامه مطلب ←</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مقاله سوم -->
+                <div class="blog-card">
+                    <div class="blog-img-box">
+                        <img src="images/UI and UX.webp" alt="اصول UI/UX">
+                    </div>
+                    <div class="blog-card-body">
+                        <span class="blog-category">طراحی رابط کاربری</span>
+                        <h3 class="blog-title">۵ اصل کلیدی در طراحی تجربه کاربری (UX)</h3>
+                        <p class="blog-excerpt">چگونه طرح‌هایی بسازیم که کاربران عاشق کار کردن با اپلیکیشن یا وب‌سایت شما شوند؟</p>
+                        <div class="blog-footer">
+                            <span class="blog-date">⏱️ ۴ دقیقه مطالعه</span>
+                            <a href="#" class="blog-read-more">ادامه مطلب ←</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مقاله چهارم (جدید) -->
+            <div class="blog-card more-blog-cards">
+                <div class="blog-img-box">
+                    <img src="https://unsplash.com" alt="سئو در وب">
+                </div>
+                <div class="blog-card-body">
+                    <span class="blog-category">سئو و بهینه‌سازی</span>
+                    <h3 class="blog-title">اصول سئو (SEO) برای توسعه‌دهندگان وب</h3>
+                    <p class="blog-excerpt">چگونه کدهای فرانت‌اند خود را بهینه‌سازی کنیم تا سایت ما در رتبه‌های اول گوگل قرار گیرد؟</p>
+                    <div class="blog-footer">
+                        <span class="blog-date">⏱️ ۶ دقیقه مطالعه</span>
+                        <a href="#" class="blog-read-more">ادامه مطلب ←</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- مقاله پنجم (جدید) -->
+            <div class="blog-card more-blog-cards">
+                <div class="blog-img-box">
+                    <img src="https://unsplash.com" alt="تحلیل داده">
+                </div>
+                <div class="blog-card-body">
+                    <span class="blog-category">علوم داده</span>
+                    <h3 class="blog-title">مقدمه‌ای بر تحلیل داده‌ها و بازار کار آن</h3>
+                    <p class="blog-excerpt">بررسی ابزارها و مهارت‌های مورد نیاز برای ورود به شغل جذاب و پردرآمد تحلیلگری داده.</p>
+                    <div class="blog-footer">
+                        <span class="blog-date">⏱️ ۷ دقیقه مطالعه</span>
+                        <a href="#" class="blog-read-more">ادامه مطلب ←</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- مقاله ششم (جدید) -->
+            <div class="blog-card more-blog-cards">
+                <div class="blog-img-box">
+                    <img src="https://unsplash.com" alt="دیزاین سیستم">
+                </div>
+                <div class="blog-card-body">
+                    <span class="blog-category">طراحی گرافیک</span>
+                    <h3 class="blog-title">دیزاین سیستم چیست و چه کاربردی دارد؟</h3>
+                    <p class="blog-excerpt">آشنایی با مفهوم تفکیک اجزا و المان‌های گرافیکی برای یکپارچه‌سازی پروژه‌های بزرگ.</p>
+                    <div class="blog-footer">
+                        <span class="blog-date">⏱️ ۵ دقیقه مطالعه</span>
+                        <a href="#" class="blog-read-more">ادامه مطلب ←</a>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- انتهای تگ blog-grid فعلی شما -->
+
+        <!-- دکمه جدید برای لود کردن مقالات بیشتر (این را دقیقاً بعد از تگ بسته‌شدن blog-grid بگذار) -->
+        <div class="blog-more-btn-wrapper">
+            <button class="view-all-blog-btn" id="loadMoreBlogBtn" type="button">مشاهده همه مقالات</button>
+        </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- بخش نظرات دانشجویان - نسخه اصلاح شده -->
     <section class="testimonials-section" dir="rtl">
         <div class="container">
@@ -822,7 +937,7 @@
             </div>
         </div>
     </section>
-
+</main>
     <!-- بخش فوتر سایت - نسخه فارسی و راست‌چین -->
 <footer class="main-footer" dir="rtl">
     <div class="footer-container">
@@ -912,7 +1027,7 @@
 
 </body>
 </html>
-<script src="script.js">
+<script src="js/script.js">
 // for prealoader
 
 window.addEventListener('load',()=>{
