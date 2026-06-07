@@ -68,7 +68,7 @@
 
                         <!-- User Dashboard Dropdown Menu -->
                         <li class="dropdown">
-                            <a href="dashboard.html" class="nav-link dropdown-toggle">پنل کاربری <span class="arrow-down"></span></a>
+                            <a href="#" class="nav-link dropdown-toggle">پنل کاربری <span class="arrow-down"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="dashboard.html">پیشخوان (Overview)</a></li>
                                 <li><a href="my-courses.html">دوره‌های من</a></li>
@@ -318,7 +318,7 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <!-- کارت دوره ۳ -->
                     <div class="course-card">
                         <div class="course-thumb" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
@@ -346,7 +346,7 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <!-- کارت دوره ۴ -->
                     <div class="course-card">
                         <div class="course-thumb" style="background: linear-gradient(135deg, #ec4899, #be185d);">
@@ -374,7 +374,63 @@
                             </div>
                         </div>
                     </div>
-    
+
+                    <!-- کارت دوره 5 -->
+                    <div class="course-card">
+                        <div class="course-thumb" style="background: linear-gradient(135deg, #ec4899, #be185d);">
+                            <div class="badge discount-badge">۲۵٪ تخفیف</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-meta">
+                                <div class="teacher-info">
+                                    <div class="teacher-avatar" style="background-image: url('images/teacher2.webp');"></div>
+                                    <a href="#">دکتر اکبری</a>
+                                </div>
+                                <div class="course-rating">
+                                    <span>۴.۷</span>
+                                    <svg class="star-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                </div>
+                            </div>
+                            <a href="#">دوره برنامه‌نویسی پایتون و هوش مصنوعی</a>
+                            <p>ورود به دنیای تحلیل داده، یادگیری ماشین و اتوماسیون</p>
+                            <div class="course-footer">
+                                <div class="price-box">
+                                    <span class="old-price">۶,۸۰۰,۰۰۰</span>
+                                    <span class="price">۵,۱۰۰,۰۰۰ تومان</span>
+                                </div>
+                                <button class="enroll-btn">ثبت نام</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- کارت دوره 6 -->
+                    <div class="course-card">
+                        <div class="course-thumb" style="background: linear-gradient(135deg, #ec4899, #be185d);">
+                            <div class="badge discount-badge">۲۵٪ تخفیف</div>
+                        </div>
+                        <div class="course-content">
+                            <div class="course-meta">
+                                <div class="teacher-info">
+                                    <div class="teacher-avatar" style="background-image: url('images/teacher2.webp');"></div>
+                                    <a href="#">دکتر اکبری</a>
+                                </div>
+                                <div class="course-rating">
+                                    <span>۴.۷</span>
+                                    <svg class="star-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                </div>
+                            </div>
+                            <a href="#">دوره برنامه‌نویسی پایتون و هوش مصنوعی</a>
+                            <p>ورود به دنیای تحلیل داده، یادگیری ماشین و اتوماسیون</p>
+                            <div class="course-footer">
+                                <div class="price-box">
+                                    <span class="old-price">۶,۸۰۰,۰۰۰</span>
+                                    <span class="price">۵,۱۰۰,۰۰۰ تومان</span>
+                                </div>
+                                <button class="enroll-btn">ثبت نام</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
             <button class="slider-nav-btn next-btn" id="nextBtn" aria-label="بعدی">❯</button>
@@ -569,8 +625,40 @@
         </div>
     </section>
 
-<script src="script.js">
+    <!-- بخش شروع یادگرفتن -->
 
+    <section class="start__learning">
+
+        <div class="left-start__learning">
+            <h3>برای یاد گرفتن آماده ای؟</h3>
+            <p>به جمع هزاران نفر دانشجو بپیوند و مسیر یادگیریت رو شروغ کن.</p>
+            <div class="left-start__learning-btns">
+                <div class="btn-primery">همین الان شروع کن</div>
+                <div class="btn-secondary">دمو را تماشا کن <span></span></div>
+            </div>
+        </div>
+
+        <div class="right__section">
+
+        </div>
+
+    </section>
+
+<script src="script.js">
+// for prealoader
+
+window.addEventListener('load',()=>{
+
+const preloader =
+document.getElementById('preloader');
+
+preloader.style.opacity='0';
+
+setTimeout(()=>{
+    preloader.style.display='none';
+},500);
+
+});
 </script>
 </body>
 </html>
