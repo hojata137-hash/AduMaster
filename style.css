@@ -37,6 +37,10 @@ Preloader
     font-family: var(--font-family);
 }
 
+html{
+    scroll-behavior: smooth !important;
+}
+
 body {
     background-color: var(--bg-main);
     color: var(--text-main);
@@ -927,6 +931,9 @@ body[dir="ltr"] .dropdown-menu {
     height: 160px;
     position: relative;
     padding: 15px;
+    width: 100%;
+    object-fit: cover;
+    background-position: center;
 }
 
 /* بج قرمز و جذاب تخفیف */
@@ -1013,9 +1020,9 @@ body[dir="ltr"] .dropdown-menu {
     align-items: center; justify-content: center; z-index: 10;
     transition: all 0.3s;
 }
-.slider-nav-btn:hover { background: #6366f1; border-color: #6366f1; }
-.prev-btn { right: -55px; } /* قرارگیری بیرون باکس اصلی به صورت شیک */
-.next-btn { left: -55px; }
+.slider-nav-btn:hover { background: var(--secondary-color); border-color: var(--secondary-color); }
+.prev-btn { right: -55px; background: var(--primary-color); } /* قرارگیری بیرون باکس اصلی به صورت شیک */
+.next-btn { left: -55px; background: var(--primary-color);}
 
 /* واکنش‌گرایی موبایل و تبلت */
 @media (max-width: 1024px) {
@@ -1454,20 +1461,179 @@ body[dir="ltr"] .dropdown-menu {
         max-width: 450px;
     }
 }
-/* متغیرهای رنگی و فونت ارسالی شما */
-:root {
-    --primary-color: #6366f1;
-    --secondary-color: #4f46e5;
-    --bg-main: #f8fafc;
-    --bg-surface: #ffffff;
-    --text-main: #1e293b;
-    --text-muted: #64748b;
-    --border-color: #e2e8f0;
-    --background: #000026;
-    --font-family: "Shabnam", "Sahel", 'Vazirmatn', sans-serif;
+
+/* استایل‌های بخش وبلاگ لندینگ */
+.blog-section {
+    background-color: var(--bg-main);
+    padding: 80px 0;
+    font-family: var(--font-family);
+    text-align: center;
 }
 
-/* استایل کلی بخش نظرات */
+.blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.blog-sub-title {
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.blog-main-title {
+    color: var(--text-main);
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+/* شبکه ۳ ستونه کارت‌های وبلاگ */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.blog-card {
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+}
+
+.blog-img-box {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.blog-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-img-box img {
+    transform: scale(1.08); /* زوم ملایم عکس هنگام هاور کارت */
+}
+
+.blog-card-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.blog-category {
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.blog-title {
+    color: var(--text-main);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 0 15px 0;
+}
+
+.blog-excerpt {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.blog-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+    margin-top: auto;
+}
+
+.blog-date {
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.blog-read-more {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.blog-read-more:hover {
+    color: var(--primary-color);
+}
+
+/* مخفی کردن مقالات جدید به صورت پیش‌فرض */
+.more-blog-cards {
+    display: none !important;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+/* کلاسی که با جاوااسکریپت برای نمایش مقالات اضافه می‌شود */
+.more-blog-cards.show-cards {
+    display: flex !important;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* استایل دکمه مشاهده همه مقالات */
+.blog-more-btn-wrapper {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.view-all-blog-btn {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: var(--font-family);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.view-all-blog-btn:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
+}
+
+/* 
+=====================
+استایل کلی بخش نظرات 
+=====================
+*/
 .testimonials-section {
     background-color: var(--bg-main);
     padding: 80px 0;
@@ -1969,18 +2135,60 @@ body[dir="ltr"] .dropdown-menu {
     }
 }
 
+/* انمیشن لود نرم برای تمام صفحات سایت */
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+        -webkit-transform: translateY(8px);
+        -moz-transform: translateY(8px);
+        -ms-transform: translateY(8px);
+        -o-transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        -o-transform: translateY(0px);
+    }
+}
+
+body{
+    animation: fadeInPage 450ms ease-in-out forwards !important;
+    -webkit-animation: fadeInPage 450ms ease-in-out forwards !important;
+}
+
+/* استایل دادن به نوار اسکرول کل سایت */
+::-webkit-scrollbar {
+    width: 15px !important; /* باریک‌تر کردن نوار */
+}
+::-webkit-scrollbar-track {
+    background: var(--background) !important; /* رنگ سورمه‌ای تیره روت شما برای پس‌زمینه اسکرول */
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color) !important; /* رنگ بنفش برند شما برای بخش متحرک */
+    border-radius: 10px !important; /* گرد کردن لبه‌ها */
+    border: 2px solid var(--background) !important; /* ایجاد فاصله ظریف */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color) !important; /* تیره شدن بنفش هنگام هاور */
+}
+
 /* ---فونت ها--- */
 
 @font-face {
     font-family: 'sahel';
-    src: url('font/Sahel-Black.ttf') format('truetype');
+    src: url('../font/Sahel-Black.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'shabnam';
-    src: url('font/Shabnam-Medium-FD.ttf') format('truetype');
+    src: url('../font/Shabnam-Medium-FD.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
