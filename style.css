@@ -1336,10 +1336,638 @@ body[dir="ltr"] .dropdown-menu {
     }
 }
 
+.learning-cta-section {
+    background-color: var(--background);
+    padding: 80px 20px;
+    font-family: var(--font-family);
+    direction: rtl;
+    overflow: hidden;
+}
 
+.cta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
 
+.cta-content {
+    flex: 1;
+    color: var(--bg-surface);
+}
 
+.cta-content h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
 
+.cta-content p {
+    color: var(--text-muted);
+    font-size: 1.15rem;
+    margin-bottom: 35px;
+    line-height: 1.8;
+    filter: brightness(1.6);
+}
+
+.cta-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-primary-cta {
+    background-color: var(--primary-color);
+    color: var(--bg-surface);
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-cta:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}
+
+.btn-outline-cta {
+    border: 2px solid var(--border-color);
+    color: var(--bg-surface);
+    padding: 12px 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-cta:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+/* بخش کاملاً واکنش‌گرای نقاشی مانیتور */
+.cta-image-wrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.cta-laptop-svg {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+    filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.5));
+}
+
+.plant-decor {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 3rem;
+    z-index: 10;
+}
+
+/* رسپانسیو فوق‌العاده برای موبایل و تبلت */
+@media (max-width: 992px) {
+    .cta-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .cta-actions {
+        justify-content: center;
+    }
+    
+    .cta-laptop-svg {
+        max-width: 450px;
+    }
+}
+/* متغیرهای رنگی و فونت ارسالی شما */
+:root {
+    --primary-color: #6366f1;
+    --secondary-color: #4f46e5;
+    --bg-main: #f8fafc;
+    --bg-surface: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --background: #000026;
+    --font-family: "Shabnam", "Sahel", 'Vazirmatn', sans-serif;
+}
+
+/* استایل کلی بخش نظرات */
+.testimonials-section {
+    background-color: var(--bg-main);
+    padding: 80px 0;
+    font-family: var(--font-family);
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* متن کوچک بالای عنوان */
+.sub-title {
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* عنوان اصلی بخش */
+.main-title {
+    color: var(--text-main);
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 50px;
+}
+
+/* ردیف افقی کارت‌ها با قابلیت اسکرول نرم */
+.testimonials-row {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding: 20px 10px 30px 10px;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* حذف نوار اسکرول در فایرفاکس */
+}
+
+/* حذف نوار اسکرول در کروم و سافاری */
+.testimonials-row::-webkit-scrollbar {
+    display: none;
+}
+
+/* استایل هر کارت نظر دهنده */
+.testimonial-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 35px;
+    text-align: right; /* راست‌چین کردن متن داخل کارت */
+    min-width: 360px;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+    cursor: pointer;
+}
+
+/* افکت متحرک هنگام رفتن موس روی کارت */
+.testimonial-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 25px -5px rgba(99, 102, 241, 0.15);
+}
+
+/* متن کامنت کاربر */
+.comment {
+    color: var(--text-main);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* ستاره‌های امتیازدهی */
+.rating {
+    color: #f59e0b;
+    font-size: 15px;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+
+/* بخش مشخصات کاربر در پایین کارت */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+/* عکس پروفایل */
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.testimonial-card:hover .avatar {
+    border-color: var(--primary-color);
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.name {
+    color: var(--text-main);
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.role {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* استایل دکمه‌های فلش ناوبری زیر اسلایدر */
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.control-btn {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+/* افکت هاور روی دکمه‌های فلش */
+.control-btn:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* هماهنگی با موبایل */
+@media (max-width: 480px) {
+    .testimonial-card {
+        min-width: 290px;
+        padding: 25px;
+    }
+    .main-title {
+        font-size: 26px;
+    }
+}
+
+/* بخش استایل لوگوهای همکاران */
+.brands-section {
+    background-color: var(--bg-main); /* همرنگ با بخش بالایی برای یکپارچگی */
+    padding: 20px 0 80px 0; /* فاصله استاندارد پدینگ از پایین */
+}
+
+.brands-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* شبکه چیدمان ردیفی کاملاً ریسپانسیو برای لوگوها */
+.brands-grid {
+    display: flex;
+    flex-wrap: wrap; /* در موبایل در صورت نیاز به ردیف بعدی هدایت می‌شوند */
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+/* استایل تکی آیتم‌های لوگو */
+.brand-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    min-width: 130px; /* حداقل عرض برای چیدمان زیبا در نمایشگرهای مختلف */
+    max-width: 160px;
+}
+
+/* تنظیم ابعاد، ابهت و رنگ لوگوهای متنی SVG */
+.brand-item svg {
+    width: 100%;
+    height: auto;
+    max-height: 32px; /* هم‌اندازه کردن ارتفاع تمام لوگوها برای نظم بصری */
+    color: var(--text-muted); /* رنگ خنثی پیش‌فرض دقیقا مثل عکس شما */
+    opacity: 0.6; /* ملایم کردن نمایش اولیه */
+    transition: all 0.3s ease; /* انیمیشن نرم برای تغییر حالت */
+}
+
+/* انیمیشن جذاب هنگام رفتن موس روی هر لوگو */
+.brand-item:hover svg {
+    color: var(--text-main); /* پررنگ شدن لوگو هنگام هاور */
+    opacity: 1;
+    transform: scale(1.05); /* بزرگنمایی نامحسوس و شیک */
+}
+
+/* هماهنگی کامل برای نمایشگرهای کوچک تبلت و موبایل */
+@media (max-width: 768px) {
+    .brands-grid {
+        justify-content: center;
+        gap: 30px;
+    }
+    .brand-item {
+        flex: unset;
+        width: calc(33.33% - 20px); /* قرارگیری ۳ لوگو در هر ردیف روی تبلت */
+    }
+}
+
+@media (max-width: 480px) {
+    .brand-item {
+        width: calc(50% - 15px); /* قرارگیری ۲ لوگو در هر ردیف روی موبایل */
+    }
+    .brand-item svg {
+        max-height: 28px; /* کمی کوچکتر شدن ابعاد روی موبایل */
+    }
+}
+
+/* استایل‌های اصلی فوتر سایت */
+.main-footer {
+    background-color: var(--background); /* استفاده از رنگ سورمه‌ای تیره روت شما */
+    color: #ffffff;
+    padding: 80px 0 30px 0;
+    font-family: var(--font-family);
+    position: relative;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* شبکه بندی ۵ ستونه اصلی فوتر */
+.footer-widgets {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 2fr; /* ستون‌های کناری بزرگتر از ستون‌های منو هستند */
+    gap: 40px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* خط جداکننده باریک */
+}
+
+.footer-column h4 {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+/* استایل لیست لینک‌ها */
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 15px;
+}
+
+.footer-column ul li a {
+    color: #94a3b8; /* رنگ متن کم‌رنگ مطابق عکس */
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: var(--primary-color); /* تغییر رنگ به بنفش هنگام هاور */
+}
+
+/* استایل ستورن برند و آیکون‌ها */
+.brand-column .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.brand-column .logo-icon {
+    width: 32px;
+    height: 32px;
+    color: #ffffff;
+}
+
+.brand-column h3 {
+    font-size: 22px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.brand-desc {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* آیکون‌های دایره‌ای شبکه‌های اجتماعی */
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-links a {
+    width: 38px;
+    height: 38px;
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.social-links a svg {
+    width: 18px;
+    height: 18px;
+}
+
+.social-links a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+/* استایل باکس خبرنامه (Newsletter) */
+.newsletter-column p {
+    color: #94a3b8;
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.newsletter-form {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px; /* دکمه و اینپوت بیضی شکل مطابق عکس */
+    padding: 4px;
+    max-width: 340px;
+}
+
+.newsletter-form input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    font-size: 13px;
+    flex: 1;
+    font-family: var(--font-family);
+}
+
+.newsletter-form input::placeholder {
+    color: #64748b;
+}
+
+.newsletter-form button {
+    background-color: var(--primary-color); /* رنگ صورتی/ارغوانی دکمه کاملاً شبیه عکس */
+    color: #ffffff;
+    border: none;
+    outline: none;
+    padding: 10px 22px;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-family);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.02);
+}
+
+/* ردیف انتهایی فوتر (کپی‌رایت و کارت‌های پرداخت) */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.copyright {
+    color: #64748b;
+    font-size: 13px;
+    margin: 0;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 10px;
+}
+
+.payment-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #94a3b8;
+    letter-spacing: 0.5px;
+}
+
+/* دکمه دایره‌ای شناور بازگشت به بالا (سمت راست پایین) */
+.scroll-to-top {
+    position: absolute;
+    bottom: 100px;
+    left: 40px; /* چون سایت راست‌چین است، دکمه در سمت چپ قرار می‌گیرد */
+    width: 45px;
+    height: 45px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(244, 114, 182, 0.3);
+    transition: all 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+/* ریسپانسیو فوق‌العاده برای تبلت و موبایل */
+@media (max-width: 1024px) {
+    .footer-widgets {
+        grid-template-columns: 1fr 1fr; /* تبدیل به حالت دو ستونه در تبلت */
+        gap: 40px;
+    }
+    .brand-column, .newsletter-column {
+        grid-column: span 2; /* ستون برند و خبرنامه کل عرض ردیف را می‌گیرند */
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-widgets {
+        grid-template-columns: 1fr; /* تک ستونه شدن کامل در موبایل */
+        gap: 30px;
+    }
+    .brand-column, .newsletter-column {
+        grid-column: span 1;
+    }
+    .footer-bottom {
+        flex-direction: column-reverse; /* قرارگیری المان‌ها روی هم در موبایل */
+        gap: 20px;
+        text-align: center;
+    }
+    .scroll-to-top {
+        position: absolute; /* شناور شدن دکمه بالا بر روی موبایل برای دسترسی راحت‌تر */
+        bottom: 20px;
+        left: 20px;
+        z-index: 99;
+    }
+}
+
+@media (max-width: 500px){
+    .scroll-to-top{
+        bottom: 35.7rem;
+    }
+}
+
+@media (max-width: 350px){
+    .scroll-to-top{
+        bottom: 24.7rem;
+    }
+}
 
 /* ---فونت ها--- */
 
