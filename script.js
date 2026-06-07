@@ -1,105 +1,63 @@
-// دریافت المان‌های اسلایدر از صفحه
-var mainSlider = document.getElementById('coursesSlider');
-var buttonPrev = document.getElementById('prevBtn');
-var buttonNext = document.getElementById('nextBtn');
+        // Hamburger Menu Logic
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const navClose = document.getElementById('nav-close');
 
-var currentSlideIndex = 0;
-var autoScrollTimer = null;
+        navToggle.addEventListener('click', () => navMenu.classList.add('show-menu'));
+        navClose.addEventListener('click', () => navMenu.classList.remove('show-menu'));
 
-// محاسبه تعداد کارت‌های قابل مشاهده بر اساس عرض صفحه
-function countVisibleCards() {
-    var pageWidth = window.innerWidth;
-    if (pageWidth > 1024) {
-        return 3;
+        // Theme Toggle Logic
+        const themeBtn = document.getElementById('theme-toggle');
+        themeBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const targetTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', targetTheme);
+        });
+
+        // FAQ Accordion Logic
+        document.querySelectorAll('.accordion__header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+// اجرای کدها پس از بارگذاری کامل ساختار صفحه
+document.addEventListener('DOMContentLoaded', function() {
+    var slider = document.getElementById('testimonialSlider');
+    var prevBtn = document.getElementById('prevBtn');
+    var nextBtn = document.getElementById('nextBtn');
+
+    // مقدار جابه‌جایی اسلایدر (عرض کارت ۳۶۰ پیکسل + فاصله ۳۰ پیکسل)
+    var offsetStep = 390;
+
+    if (slider && prevBtn && nextBtn) {
+        // کلیک روی دکمه بعدی
+        nextBtn.addEventListener('click', function() {
+            slider.scrollBy({
+                left: -offsetStep, // در جهت راست‌چین عدد منفی به جلو می‌رود
+                behavior: 'smooth'
+            });
+        });
+
+        // کلیک روی دکمه قبلی
+        prevBtn.addEventListener('click', function() {
+            slider.scrollBy({
+                left: offsetStep, // عدد مثبت به عقب بازمی‌گردد
+                behavior: 'smooth'
+            });
+        });
     }
-    if (pageWidth > 640) {
-        return 2;
-    }
-    return 1;
-}
-
-// تغییر موقعیت اسلایدر روی صفحه
-function moveSlider() {
-    var singleCard = mainSlider.querySelector('.course-card');
-    if (!singleCard) {
-        return;
-    }
-    
-    var cardWidth = singleCard.getBoundingClientRect().width;
-    var spaceGap = 24; // فاصله بین کارت‌ها در سی‌اس‌اس
-    
-    // محاسبه دقیق میزان جابه‌جایی به پیکسل
-    var totalMove = currentSlideIndex * (cardWidth + spaceGap);
-    mainSlider.style.transform = 'translateX(' + totalMove + 'px)';
-}
-
-// رفتن به اسلاید بعدی
-function goToNextSlide() {
-    var totalCardsCount = mainSlider.children.length;
-    var visibleCardsCount = countVisibleCards();
-    
-    if (currentSlideIndex >= (totalCardsCount - visibleCardsCount)) {
-        currentSlideIndex = 0; // اگر به آخر رسید، برگرد اول
-    } else {
-        currentSlideIndex = currentSlideIndex + 1;
-    }
-    moveSlider();
-}
-
-// رفتن به اسلاید قبلی
-function goToPrevSlide() {
-    var totalCardsCount = mainSlider.children.length;
-    var visibleCardsCount = countVisibleCards();
-    
-    if (currentSlideIndex <= 0) {
-        currentSlideIndex = totalCardsCount - visibleCardsCount; // اگر اول بود، برو آخر
-    } else {
-        currentSlideIndex = currentSlideIndex - 1;
-    }
-    moveSlider();
-}
-
-// مدیریت کلیک روی دکمه‌های دستی
-if (buttonNext && buttonPrev) {
-    buttonNext.addEventListener('click', function() {
-        clearInterval(autoScrollTimer);
-        goToNextSlide();
-        runAutoPlay();
-    });
-    
-    buttonPrev.addEventListener('click', function() {
-        clearInterval(autoScrollTimer);
-        goToPrevSlide();
-        runAutoPlay();
-    });
-}
-
-// شروع تایمر حرکت اتوماتیک (هر ۴ ثانیه یک‌بار)
-function runAutoPlay() {
-    autoScrollTimer = setInterval(goToNextSlide, 4000);
-}
-
-// اجرای اولیه اسلایدر
-runAutoPlay();
-
-// بازتنظیم اسلایدر در صورت تغییر سایز مرورگر
-window.addEventListener('resize', function() {
-    currentSlideIndex = 0;
-    moveSlider();
 });
 
+// فعال‌سازی دکمه بازگشت به بالای صفحه
+var scrollTopBtn = document.getElementById('scrollTopBtn');
 
-// for prealoader
-
-window.addEventListener('load',()=>{
-
-    const preloader =
-    document.getElementById('preloader');
-
-    preloader.style.opacity='0';
-
-    setTimeout(()=>{
-        preloader.style.display='none';
-    },500);
-
-});
+if (scrollTopBtn) {
+    scrollTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // حرکت اسکرول به صورت کاملاً نرم
+        });
+    });
+}
