@@ -1,0 +1,119 @@
+/* استایل‌های اختصاصی صفحه درباره ما 
+*/
+.about-main-content {
+    background-color: var(--bg-main);
+    font-family: var(--font-family);
+    padding: 60px 0;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* بخش هیرو و بنر عنوان */
+.about-hero {
+    text-align: center;
+    padding: 60px 0;
+    background-color: var(--bg-surface);
+    border-radius: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.about-sub {
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.about-title {
+    color: var(--text-main);
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 0 20px 0;
+}
+
+.about-lead {
+    color: var(--text-muted);
+    font-size: 16px;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* چیدمان دو ستونه متن داستان و آمار */
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.story-text h2 {
+    color: var(--text-main);
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.story-text p {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* گرید باکس‌های آمار نئونی */
+.about-stats-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.stat-item {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* هاور نئونی بنفش برای آمارها */
+.stat-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.1);
+}
+
+.stat-item h3 {
+    color: var(--primary-color);
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+}
+
+.stat-item p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin: 0;
+}
+
+/* ریسپانسیو برای تبلت و موبایل */
+@media (max-width: 768px) {
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .about-title {
+        font-size: 26px;
+    }
+}

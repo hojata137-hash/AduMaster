@@ -1,0 +1,196 @@
+/* استایل‌های اختصاصی صفحه تماس با ما */
+.contact-main-section {
+    background-color: var(--bg-main);
+    padding: 60px 0 80px 0;
+    font-family: var(--font-family);
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.contact-header-text {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-header-text span {
+    color: var(--primary-color);
+    font-size: 13px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.contact-header-text h1 {
+    color: var(--text-main);
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 0 15px 0;
+}
+
+.contact-header-text p {
+    color: var(--text-muted);
+    font-size: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ساختار گرید دو ستونه فرم و کارت‌ها */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+/* کارت فرم ارسال پیام */
+.contact-form-card {
+    background-color: var(--bg-surface);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    border: 1px solid var(--border-color);
+}
+
+.contact-form-card h3 {
+    color: var(--text-main);
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+/* ردیف افقی فیلدهای نام و ایمیل */
+.input-row-flex {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-field-group {
+    margin-bottom: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-field-group label {
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.contact-field-group input,
+.contact-field-group textarea {
+    width: 100%;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: var(--text-main);
+    outline: none;
+    font-family: var(--font-family);
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.contact-field-group input:focus,
+.contact-field-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+.contact-submit-btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 15px 35px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-family);
+    transition: all 0.3s ease;
+}
+
+.contact-submit-btn:hover {
+    background-color: var(--secondary-color);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.2);
+}
+
+/* ستون سمت راست: اطلاعات تماس */
+.contact-info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.info-details-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.info-details-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.05);
+}
+
+.info-icon-circle {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(99, 102, 241, 0.08);
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.info-text-box h4 {
+    color: var(--text-main);
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.info-text-box p {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ریسپانسیو کامل تبلت و موبایل */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* قرارگیری ستون‌ها زیر هم روی تبلت و موبایل */
+        gap: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .input-row-flex {
+        flex-direction: column; /* زیر هم رفتن نام و ایمیل روی موبایل */
+        gap: 0;
+    }
+    .contact-form-card {
+        padding: 25px;
+    }
+    .contact-header-text h1 {
+        font-size: 26px;
+    }
+}
