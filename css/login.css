@@ -1,1 +1,403 @@
+/* استایل بدنه اصلی صفحه ورود */
+.auth-page-body {
+    background-color: var(--background) !important; /* رنگ سورمه ای تیره روت شما */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: var(--font-family);
+    overflow-x: hidden;
+}
 
+.auth-wrapper {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    position: relative;
+}
+
+/* دکمه بازگشت به خانه */
+.back-to-home {
+    display: inline-block;
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.back-to-home:hover {
+    color: var(--primary-color);
+}
+
+/* کارت اصلی فرم */
+.auth-card {
+    background-color: var(--bg-surface); /* رنگ سفید روت شما */
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    text-align: right;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.auth-title {
+    color: var(--text-main);
+    font-size: 26px;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+}
+
+.auth-subtitle {
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* استایل فیلدهای ورودی */
+.form-group {
+    margin-bottom: 22px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    background-color: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px 16px;
+    font-size: 15px;
+    color: var(--text-main);
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+/* فوکوس روی اینپوت */
+.form-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+/* ساختار نمایش چشم دکمه پسورد */
+/* ========================================================
+   بخش اصلاح‌شده: ساختار نمایش چشم دکمه پسورد بدون به‌هم‌ریختگی
+   ======================================================== */
+   .password-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+/* افزایش پدینگ چپ اینپوت پسورد برای اینکه متن زیر آیکون چشم نرود */
+.form-group input[type="password"] {
+    padding-left: 45px !important; 
+}
+
+.toggle-password-btn {
+    position: absolute !important;
+    left: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    font-size: 16px !important;
+    padding: 5px !important;
+    outline: none !important;
+    z-index: 10 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+    user-select: none !important;
+}
+
+/* جلوگیری از جابه‌جایی آیکون هنگام بروز حالت خطا */
+.form-group.has-error .password-wrapper {
+    margin-bottom: 0 !important;
+}
+
+/* مدیریت پیام‌های خطا */
+.error-message {
+    color: #ef4444;
+    font-size: 12px;
+    font-weight: bold;
+    display: none;
+    margin-top: 6px;
+}
+
+/* استایل حالت خطا (قرمز شدن فیلد) */
+.form-group.has-error input {
+    border-color: #ef4444 !important;
+    background-color: #fef2f2 !important;
+}
+
+.form-group.has-error .error-message {
+    display: block;
+}
+
+/* باکس خطای سراسری بالای فرم */
+.global-error-box {
+    background-color: #fef2f2;
+    border: 1px solid #fca5a5;
+    color: #b91c1c;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: none;
+    text-align: center;
+}
+
+/* گزینه‌های به خاطر سپردن و فراموشی */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.remember-me {
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.forgot-pass {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.forgot-pass:hover {
+    color: var(--primary-color);
+}
+
+/* دکمه ارسال فرم و لودینگ چرخشی */
+.auth-submit-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.auth-submit-btn:hover {
+    background-color: var(--secondary-color);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.25);
+}
+
+/* استایل انیمیشن اسپینر لودینگ */
+.btn-spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: spin 0.8s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* انیمیشن لرزش کارت هنگام بروز خطا (Shake Effect) */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(8px); }
+    40%, 80% { transform: translateX(-8px); }
+}
+
+.shake-animation {
+    animation: shake 0.4s ease-in-out;
+}
+
+.auth-footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.register-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+/* ==========================================
+   حل قطعی مشکل کوچک شدن فیلد رمز عبور و پرش چشم
+   ========================================== */
+
+/* ۱. قفل کردن ساختار والد برای فیلد رمز عبور */
+#passwordGroup .password-wrapper {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important; /* اصرار بر پر کردن کل عرض کارت */
+}
+
+/* ۲. اصلاح و فیکس کردن استایل اینپوت رمز عبور */
+#passwordGroup input[type="password"],
+#passwordGroup input[type="text"] {
+    width: 100% !important; /* قفل کردن عرض روی ۱۰۰ درصد تا کوچک نشود */
+    display: block !important;
+    box-sizing: border-box !important; /* محاسبه دقیق پدینگ در عرض */
+    padding-left: 45px !important; /* ایجاد فضای خالی در سمت چپ برای آیکون چشم */
+    padding-right: 16px !important;
+}
+
+/* ۳. قفل کردن موقعیت ایموجی چشم در داخل باکس */
+#passwordGroup .toggle-password-btn {
+    position: absolute !important;
+    left: 12px !important; /* قرارگیری دقیق در سمت چپ داخل اینپوت */
+    top: 50% !important;
+    transform: translateY(-50%) !important; /* تراز عمودی کاملاً دقیق */
+    background: transparent !important;
+    border: none !important;
+    font-size: 18px !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: 10 !important;
+    line-height: 1 !important;
+    height: auto !important;
+    width: auto !important;
+}
+
+/* ========================================================
+   اصلاح نهایی و ۱۰۰٪ قطعی فیلد رمز عبور (همسان‌سازی با ایمیل)
+   ======================================================== */
+
+/* ۱. استایل‌دهی به هر نوع اینپوتی که داخل بخش رمز عبور قرار می‌گیرد */
+#passwordGroup input {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    
+    /* کپی دقیق ویژگی‌های ظاهری فیلد ایمیل بالا */
+    background-color: var(--bg-main) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 12px !important;
+    padding: 14px 16px !important;
+    padding-left: 45px !important; /* فضا برای آیکون چشم در سمت چپ */
+    font-size: 15px !important;
+    color: var(--text-main) !important;
+    outline: none !important;
+    height: auto !important;
+}
+
+/* ۲. فوکوس روی فیلد رمز عبور دقیقا مثل فیلد بالا */
+#passwordGroup input:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1) !important;
+}
+
+/* ۳. قفل کردن کادر والد برای جلوگیری از مچول شدن */
+#passwordGroup .password-wrapper {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* ۴. میخکوب کردن آیکون میمون/چشم در سمت چپِ داخلِ باکس */
+#passwordGroup .toggle-password-btn {
+    position: absolute !important;
+    left: 14px !important; /* فاصله دقیق از سمت چپ لبه داخلی باکس */
+    top: 50% !important;
+    transform: translateY(-50%) !important; /* تراز وسط دقیق عمودی */
+    background: transparent !important;
+    border: none !important;
+    font-size: 18px !important;
+    cursor: pointer !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    z-index: 10 !important;
+    line-height: 1 !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+
+
+
+
+/* ========================================================
+   استایل‌های تکمیلی مخصوص صفحه ثبت‌نام (همسان‌سازی فیلدها)
+   ======================================================== */
+
+   #usernameGroup input,
+   #confirmPasswordGroup input {
+       width: 100% !important;
+       max-width: 100% !important;
+       display: block !important;
+       box-sizing: border-box !important;
+       background-color: var(--bg-main) !important;
+       border: 1px solid var(--border-color) !important;
+       border-radius: 12px !important;
+       padding: 14px 16px !important;
+       font-size: 15px !important;
+       color: var(--text-main) !important;
+       outline: none !important;
+       height: auto !important;
+   }
+   
+   #confirmPasswordGroup input {
+       padding-left: 45px !important; /* فضا برای چشم دوم */
+   }
+   
+   #usernameGroup input:focus,
+   #confirmPasswordGroup input:focus {
+       border-color: var(--primary-color) !important;
+       box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1) !important;
+   }
+   
+   /* قفل کردن دکمه چشم تکرار رمز عبور */
+   #confirmPasswordGroup .password-wrapper {
+       position: relative !important;
+       display: block !important;
+       width: 100% !important;
+   }
+   
+   #confirmPasswordGroup .toggle-password-btn {
+       position: absolute !important;
+       left: 14px !important;
+       top: 50% !important;
+       transform: translateY(-50%) !important;
+       background: transparent !important;
+       border: none !important;
+       font-size: 18px !important;
+       cursor: pointer !important;
+       padding: 0 !important;
+       z-index: 10 !important;
+   }
