@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>پیشخوان کاربری | ادومستر</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        
+        <!-- سایدبار کناری با منوهای جدید شما -->
+        <aside class="dash-sidebar">
+            <div class="dash-logo">
+                <h2>ادومستر</h2>
+            </div>
+
+            <!-- دکمه نجات: بازگشت راحت به صفحه اصلی سایت -->
+            <a href="../index.html" class="back-to-home-btn">
+                <span class="dash-icon">🏠</span>
+                بازگشت به سایت اصلی
+            </a>
+            
+            <nav class="dash-menu">
+                <a href="dashboard.html" class="dash-menu-item active">
+                    <span class="dash-icon">📊</span>
+                    پیشخوان
+                </a>
+                <a href="my-courses.html" class="dash-menu-item">
+                    <span class="dash-icon">🎓</span>
+                    دوره‌های من
+                </a>
+                <a href="certificates.html" class="dash-menu-item">
+                    <span class="dash-icon">📜</span>
+                    گواهینامه‌ها
+                </a>
+                <a href="wishlist.html" class="dash-menu-item">
+                    <span class="dash-icon">❤️</span>
+                    علاقه‌مندی‌ها
+                </a>
+                <a href="settings.html" class="dash-menu-item">
+                    <span class="dash-icon">⚙️</span>
+                    تنظیمات حساب
+                </a>
+                <a href="#" class="dash-menu-item logout" onclick="toggleLogoutModal(true)">
+                    <span class="dash-icon">🚪</span>
+                    خروج از حساب
+                </a>
+            </nav>
+        </aside>
+
+        <!-- محتوای اصلی سمت چپ -->
+        <main class="dash-main-content">
+            
+            <!-- هدر بالایی پنل -->
+            <header class="dash-header">
+                <div class="user-welcome">
+                    <h3>سلام، احمد عزیز! 👋</h3>
+                    <p>خوش‌آمدی، امروز مسیر یادگیریت رو ادامه بده.</p>
+                </div>
+                <div class="user-avatar-box">
+                    <img src="../images/student2.webp" alt="پروفایل کاربر" class="user-avatar">
+                </div>
+            </header>
+
+            <!-- بخش باکس اعلان‌های مهم (جدید برای پر شدن صفحه) -->
+            <section class="dash-notice-box">
+                <div class="notice-icon">📢</div>
+                <div class="notice-text">
+                    <h4>اطلاعیه مهم آموزشی</h4>
+                    <p>دانشجویان عزیز، آپدیت جدید دوره جاوااسکریپت (فصل ۵) منتشر شد. هم‌اکنون می‌توانید تماشا کنید.</p>
+                </div>
+            </section>
+
+            <!-- بخش کارت‌های گزارش سریع -->
+            <section class="dash-stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon courses-color">📚</div>
+                    <div class="stat-info">
+                        <h4>دوره‌های من</h4>
+                        <span>۳ دوره</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon cert-color">📜</div>
+                    <div class="stat-info">
+                        <h4>گواهینامه‌ها</h4>
+                        <span>۱ مدرک</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon wishlist-color">❤️</div>
+                    <div class="stat-info">
+                        <h4>علاقه‌مندی‌ها</h4>
+                        <span>۵ مورد</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- چیدمان دو ستونه پایین برای پر شدن و زیبایی پیشخوان (جدید) -->
+            <div class="dash-bottom-grid">
+                
+                <!-- ستون راست: ادامه آموزش‌های اخیر -->
+                <div class="dash-column-main">
+                    <div class="section-title">
+                        <h3>🏃‍♂️ ادامه آموزش‌های اخیر (دسترسی سریع)</h3>
+                    </div>
+
+                    <div class="recent-course-card">
+                        <div class="course-thumb-placeholder">💻</div>
+                        <div class="recent-course-details">
+                            <h4>دوره جامع متخصص فرانت‌اند (React)</h4>
+                            <p>آخرین بخش: جلسه ۱۲ - ساختار کامپوننت‌ها</p>
+                            <div class="progress-bar-wrapper">
+                                <div class="progress-bar" style="width: 45%;"></div>
+                            </div>
+                        </div>
+                        <a href="course-player.html" class="resume-btn">ادامه دوره</a>
+                    </div>
+                </div>
+
+                <!-- ستون چپ: آخرین گواهینامه کسب شده (جدید) -->
+                <div class="dash-column-side">
+                    <div class="section-title">
+                        <h3>🏆 آخرین گواهینامه</h3>
+                    </div>
+                    <div class="mini-cert-card">
+                        <div class="cert-badge">🥇</div>
+                        <h4>مدرک وب‌مستر هوشمند</h4>
+                        <p>صادر شده در: ۱۴۰۵/۰۲/۱۵</p>
+                        <a href="#" class="view-cert-link">مشاهده مدرک</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- ==========================================================================
+   باکس پاپ‌آپ تایید خروج (Logout Modal)
+   ========================================================================== -->
+<div class="logout-modal-overlay" id="logoutModal">
+    <div class="logout-modal-card">
+        <div class="modal-icon">🚪</div>
+        <h3>خروج از حساب کاربری</h3>
+        <p>احمد عزیز، آیا واقعاً می‌خواهی از حساب کاربری خود خارج شوی؟</p>
+        
+        <div class="modal-actions">
+            <!-- این دکمه کاربر را به صفحه اصلی هدایت می‌کند -->
+            <a href="../index.html" class="modal-btn confirm-logout-btn">بله، خارج می‌شوم</a>
+            <!-- این دکمه پاپ‌آپ را می‌بندد -->
+            <button class="modal-btn cancel-logout-btn" onclick="toggleLogoutModal(false)">خیر، می‌مانم</button>
+        </div>
+    </div>
+</div>
+
+<script src="../js/script.js"></script>
+
+</body>
+</html>

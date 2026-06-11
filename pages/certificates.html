@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گواهینامه‌های من | ادومستر</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/certificates.css">
+</head>
+<body>
+
+    <div class="dashboard-wrapper">
+        
+        <!-- سایدبار مشترک پنل (کلاس active روی گواهینامه‌ها قرار گرفته) -->
+        <aside class="dash-sidebar">
+            <div class="dash-logo">
+                <h2>ادومستر</h2>
+            </div>
+
+            <a href="../index.html" class="back-to-home-btn">
+                <span class="dash-icon">🏠</span>
+                بازگشت به سایت اصلی
+            </a>
+            
+            <nav class="dash-menu">
+                <a href="dashboard.html" class="dash-menu-item">
+                    <span class="dash-icon">📊</span>
+                    پیشخوان
+                </a>
+                <a href="my-courses.html" class="dash-menu-item">
+                    <span class="dash-icon">🎓</span>
+                    دوره‌های من
+                </a>
+                <a href="certificates.html" class="dash-menu-item active">
+                    <span class="dash-icon">📜</span>
+                    گواهینامه‌ها
+                </a>
+                <a href="wishlist.html" class="dash-menu-item">
+                    <span class="dash-icon">❤️</span>
+                    علاقه‌مندی‌ها
+                </a>
+                <a href="settings.html" class="dash-menu-item">
+                    <span class="dash-icon">⚙️</span>
+                    تنظیمات حساب
+                </a>
+                <a href="#" class="dash-menu-item logout" onclick="toggleLogoutModal(true)">
+                    <span class="dash-icon">🚪</span>
+                    خروج از حساب
+                </a>
+            </nav>
+        </aside>
+
+        <!-- محتوای اصلی بخش گواهینامه‌ها -->
+        <main class="dash-main-content">
+            
+            <!-- هدر بالایی پنل -->
+            <header class="dash-header">
+                <div class="user-welcome">
+                    <h3>مدارک و گواهینامه‌ها 🏆</h3>
+                    <p>در این بخش می‌توانید مدارک پایان دوره معتبر خود را مشاهده و دانلود کنید.</p>
+                </div>
+                <div class="user-avatar-box">
+                    <img src="../images/student2.webp" alt="پروفایل کاربر" class="user-avatar">
+                </div>
+            </header>
+
+            <!-- شبکه کارت‌های گواهینامه‌ها -->
+            <section class="cert-archive-grid">
+                
+                <!-- گواهینامه اول (صادر شده) -->
+                <div class="cert-archive-card">
+                    <div class="cert-badge-box">🥇</div>
+                    <div class="cert-card-info">
+                        <h4>گواهینامه تخصصی دوره CSS Grid & Flexbox</h4>
+                        <p class="cert-meta">کد تایید اصالت: <span class="cert-code">EDM-98542</span></p>
+                        <p class="cert-date">تاریخ صدور: ۱۵ اردیبهشت ۱۴۰۵</p>
+                    </div>
+                    <div class="cert-card-actions">
+                        <a href="#" class="cert-btn view-btn">مشاهده آنلاین</a>
+                        <a href="#" class="cert-btn download-btn">دانلود PDF</a>
+                    </div>
+                </div>
+
+                <!-- گواهینامه دوم (قفل شده / در حال یادگیری برای پر شدن صفحه) -->
+                <div class="cert-archive-card locked-cert">
+                    <div class="cert-badge-box">🔒</div>
+                    <div class="cert-card-info">
+                        <h4>گواهینامه دوره جامع متخصص فرانت‌اند (React)</h4>
+                        <p class="cert-meta">وضعیت: <span class="cert-status-text">در حال یادگیری (۴۵٪ طی شده)</span></p>
+                        <p class="cert-date">پس از اتمام ۱۰۰٪ دوره صادر می‌شود.</p>
+                    </div>
+                    <div class="cert-card-actions">
+                        <a href="course-player.html" class="cert-btn continue-btn">ادامه آموزش</a>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- بخش راهنمای هوشمند دریافت مدرک (برای پر شدن و شیک شدن صفحه) -->
+            <section class="cert-guide-box">
+                <div class="guide-title-box">
+                    <span class="guide-icon">💡</span>
+                    <h3>راهنمای دریافت گواهینامه معتبر ادومستر</h3>
+                </div>
+                <div class="guide-steps-list">
+                    <div class="guide-step">
+                        <span class="step-num">۱</span>
+                        <p>مشاهده کامل تمامی جلسات ویدئویی دوره آموزشی مندرج در پنل.</p>
+                    </div>
+                    <div class="guide-step">
+                        <span class="step-num">۲</span>
+                        <p>ارسال و تایید پروژه‌های پایانی دوره توسط مدرس مربوطه.</p>
+                    </div>
+                    <div class="guide-step">
+                        <span class="step-num">۳</span>
+                        <p>صدور خودکار و آنی مدرک دیجیتال با کد رهگیری جهانی در این صفحه.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- ==========================================================================
+   باکس پاپ‌آپ تایید خروج (Logout Modal)
+   ========================================================================== -->
+<div class="logout-modal-overlay" id="logoutModal">
+    <div class="logout-modal-card">
+        <div class="modal-icon">🚪</div>
+        <h3>خروج از حساب کاربری</h3>
+        <p>احمد عزیز، آیا واقعاً می‌خواهی از حساب کاربری خود خارج شوی؟</p>
+        
+        <div class="modal-actions">
+            <!-- این دکمه کاربر را به صفحه اصلی هدایت می‌کند -->
+            <a href="../index.html" class="modal-btn confirm-logout-btn">بله، خارج می‌شوم</a>
+            <!-- این دکمه پاپ‌آپ را می‌بندد -->
+            <button class="modal-btn cancel-logout-btn" onclick="toggleLogoutModal(false)">خیر، می‌مانم</button>
+        </div>
+    </div>
+</div>
+
+<script src="../js/script.js"></script>
+</body>
+</html>
