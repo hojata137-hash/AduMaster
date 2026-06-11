@@ -58,8 +58,6 @@
                             <ul class="dropdown-menu">
                                 <li><a href="pages/about.html">درباره ما</a></li>
                                 <li><a href="pages/contact.html">تماس با ما</a></li>
-                                <li><a href="pages/pricing.html">پلن‌های قیمت‌گذاری</a></li>
-                                <li><a href="pages/faq.html">سوالات متداول</a></li>
                                 <li><a href="pages/login.html">صفحه ورود</a></li>
                                 <li><a href="pages/register.html">صفحه ثبت‌نام</a></li>
                             </ul>
@@ -69,11 +67,11 @@
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle">پنل کاربری <span class="arrow-down"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="dashboard.html">پیشخوان (Overview)</a></li>
-                                <li><a href="my-courses.html">دوره‌های من</a></li>
-                                <li><a href="certificates.html">گواهینامه‌ها</a></li>
-                                <li><a href="wishlist.html">علاقه‌مندی‌ها</a></li>
-                                <li><a href="settings.html">تنظیمات حساب</a></li>
+                                <li><a href="pages/dashboard.html">پیشخوان (Overview)</a></li>
+                                <li><a href="pages/my-courses.html">دوره‌های من</a></li>
+                                <li><a href="pages/certificates.html">گواهینامه‌ها</a></li>
+                                <li><a href="pages/wishlist.html">علاقه‌مندی‌ها</a></li>
+                                <li><a href="pages/settings.html">تنظیمات حساب</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -113,6 +111,8 @@
     <!-- ==========================================
        END: HEADER SECTION
        ========================================== -->
+
+       
 <main style="transition: all 300ms ease;">
 <!-- ==========================================
        START: HERO SECTION
@@ -248,7 +248,7 @@
                 <p>جدیدترین و پرمخاطب‌ترین دوره‌های بازار کار</p>
             </div>
             <!-- لینک آرشیو محصولات -->
-            <a href="#" class="view-all-btn">
+            <a href="pages/courses.html" class="view-all-btn">
                 مشاهده همه دوره‌ها
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
             </a>
@@ -937,7 +937,62 @@
             </div>
         </div>
     </section>
+
+        <!-- ==========================================================================
+       بخش سوالات متداول (FAQ Section)
+       ========================================================================== -->
+    <section class="home-faq-section">
+        <div class="home-faq-container">
+
+            <!-- تیتر بخش -->
+            <div class="home-faq-header">
+                <span class="home-faq-subtitle">پشتیبانی آموزشی</span>
+                <h2 class="home-faq-title">سوالات متداول کاربران</h2>
+                <p class="home-faq-desc">پاسخ رایج‌ترین سوالات خود را در این بخش پیدا کنید.</p>
+            </div>
+
+            <!-- مجموعه سوالات آکاردئونی -->
+            <div class="home-faq-wrapper">
+
+                <!-- سوال اول -->
+                <div class="home-faq-item">
+                    <button class="home-faq-question">
+                        آیا دوره‌ها دارای پشتیبانی هستند؟ 
+                        <span class="home-faq-icon">+</span>
+                    </button>
+                    <div class="home-faq-answer">
+                        <p>بله، تمامی دوره‌های تخصصی ادومستر دارای پشتیبانی دائمی توسط مدرس دوره در پنل کاربری و تلگرام هستند.</p>
+                    </div>
+                </div>
+
+                <!-- سوال دوم -->
+                <div class="home-faq-item">
+                    <button class="home-faq-question">
+                        چگونه می‌توانم ویدیوهای دوره را تماشا کنم؟ 
+                        <span class="home-faq-icon">+</span>
+                    </button>
+                    <div class="home-faq-answer">
+                        <p>پس از خرید هر دوره، دسترسی شما به ویدیوها به صورت آنی باز می‌شود و می‌توانید از طریق سیستم اسپات‌پلی یا پنل کاربری دانلود یا تماشا کنید.</p>
+                    </div>
+                </div>
+
+                <!-- سوال سوم -->
+                <div class="home-faq-item">
+                    <button class="home-faq-question">
+                        آیا امکان بازگشت وجه در صورت عدم رضایت وجود دارد؟ 
+                        <span class="home-faq-icon">+</span>
+                    </button>
+                    <div class="home-faq-answer">
+                        <p>بله، تا ۷ روز پس از خرید دوره، در صورت عدم رضایت از کیفیت آموزشی می‌توانید درخواست بازگشت وجه خود را ثبت کنید.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
 </main>
+
     <!-- بخش فوتر سایت - نسخه فارسی و راست‌چین -->
 <footer class="main-footer" dir="rtl">
     <div class="footer-container">
