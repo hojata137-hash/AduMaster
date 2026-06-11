@@ -1,0 +1,184 @@
+/* ==========================================================================
+   شبکه کارت‌های علاقه‌مندی‌ها (Grid)
+   ========================================================================== */
+   .wishlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 25px;
+}
+
+.wish-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wish-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* کاور کارت */
+.wish-card-cover {
+    position: relative;
+    width: 100%;
+    height: 165px;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.wish-card-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* دکمه قرمز حذف از علاقه‌مندی‌ها روی کاور */
+.remove-wish-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border-radius: 50%;
+    font-size: 11px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    transition: all 0.2s ease;
+}
+
+.remove-wish-btn:hover {
+    background-color: #ef4444;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* بدنه کارت */
+.wish-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 10px;
+}
+
+.wish-category {
+    color: var(--primary-color);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.wish-card-body h4 {
+    color: var(--text-main);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    min-height: 44px;
+}
+
+.wish-card-body .instructor {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+/* بخش قیمت و دکمه خرید در فوتر کارت */
+.wish-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+    margin-top: auto;
+}
+
+.wish-price-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.old-price {
+    color: var(--text-muted);
+    font-size: 11.5px;
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.current-price {
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.buy-wish-btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.buy-wish-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* ==========================================================================
+   استایل وضعیت خالی بودن لیست (Empty State)
+   ========================================================================== */
+.wishlist-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--bg-surface);
+    border: 1px dashed var(--border-color);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.empty-icon {
+    font-size: 48px;
+}
+
+.wishlist-empty-state h4 {
+    color: var(--text-main);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.wishlist-empty-state p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.browse-courses-btn {
+    display: inline-block;
+    background-color: rgba(99, 102, 241, 0.06);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.browse-courses-btn:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}

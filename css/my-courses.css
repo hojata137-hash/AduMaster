@@ -1,0 +1,165 @@
+/* ==========================================================================
+   نوار فیلتر بالای دوره‌ها
+   ========================================================================== */
+   .courses-filter-bar {
+    display: flex;
+    gap: 12px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
+
+.filter-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text-muted);
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    color: var(--text-main);
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   شبکه کارت‌های دوره‌ها (Grid)
+   ========================================================================== */
+.courses-archive-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding-top: 10px;
+}
+
+.course-archive-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-archive-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* کاور دوره */
+.course-card-cover {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.course-card-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* نشان وضعیت روی کاور */
+.course-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: #ffffff;
+}
+
+.course-badge.learning {
+    background-color: var(--primary-color);
+}
+
+.course-badge.completed {
+    background-color: #10b981;
+}
+
+/* بدنه کارت */
+.course-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 12px;
+}
+
+.course-card-body h4 {
+    color: var(--text-main);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.5;
+    min-height: 44px; /* هم‌تراز شدن تایتل‌ها */
+}
+
+.course-card-body .instructor {
+    color: var(--text-muted);
+    font-size: 13px;
+}
+
+/* پیشرفت دوره */
+.course-progress-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.progress-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+/* دکمه ورود به دوره */
+.enter-course-btn {
+    display: block;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.enter-course-btn:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* استایل دکمه دوره‌های تمام شده */
+.enter-course-btn.completed-btn {
+    border-color: rgba(16, 185, 129, 0.3);
+    color: #10b981;
+    background-color: rgba(16, 185, 129, 0.02);
+}
+
+.enter-course-btn.completed-btn:hover {
+    background-color: #10b981;
+    color: #ffffff;
+}

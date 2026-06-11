@@ -1,0 +1,164 @@
+/* ==========================================================================
+   باکس‌های بخش‌بندی تنظیمات (Cards)
+   ========================================================================== */
+   .settings-form-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.settings-section-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.settings-card-header {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.settings-card-header h4 {
+    color: var(--text-main);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+/* ==========================================================================
+   بخش آپلود تصویر پروفایل
+   ========================================================================== */
+.profile-upload-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.01);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px dashed var(--border-color);
+}
+
+.upload-avatar-preview {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--primary-color);
+    flex-shrink: 0;
+}
+
+.upload-avatar-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.upload-btn-details input[type="file"] {
+    display: none; /* مخفی کردن دکمه پیش‌فرض زشت */
+}
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: rgba(99, 102, 241, 0.1);
+    color: var(--primary-color);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.custom-file-upload:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.upload-btn-details p {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 6px;
+}
+
+/* ==========================================================================
+   استایل فیلدها و ساختار فرم (Form Controls)
+   ========================================================================== */
+.settings-grid-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label {
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.input-group input {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-family: var(--font-family);
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.15);
+}
+
+/* فیلد غیرقابل تغییر */
+.disabled-input {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    color: var(--text-muted) !important;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* دکمه ذخیره */
+.form-action-box {
+    grid-column: 1 / -1; /* دکمه کل عرض سطر را بگیرد یا ته صف برود */
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.save-settings-btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    outline: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.save-settings-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.password-btn {
+    background-color: #10b981;
+}
+
+.password-btn:hover {
+    background-color: #059669;
+}

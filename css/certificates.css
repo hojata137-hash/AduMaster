@@ -1,0 +1,221 @@
+/* ==========================================================================
+   شبکه کارت‌های گواهینامه‌ها (Grid)
+   ========================================================================== */
+   .cert-archive-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cert-archive-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.cert-archive-card:hover {
+    transform: translateX(-5px);
+    border-color: rgba(16, 185, 129, 0.4); /* افکت سبز ملایم هنگام هاور مدرک صادر شده */
+}
+
+/* آیکون مدال مدرک */
+.cert-badge-box {
+    width: 64px;
+    height: 64px;
+    background-color: rgba(16, 185, 129, 0.08);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+}
+
+/* اطلاعات مدرک */
+.cert-card-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.cert-card-info h4 {
+    color: var(--text-main);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.cert-meta {
+    color: var(--text-muted);
+    font-size: 13.5px;
+}
+
+.cert-code {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-family: monospace;
+    letter-spacing: 0.5px;
+}
+
+.cert-date {
+    color: var(--text-muted);
+    font-size: 12.5px;
+}
+
+/* دکمه‌های عملیات کارت مدرک */
+.cert-card-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.cert-btn {
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    font-family: var(--font-family);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.view-btn {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+
+.view-btn:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #ffffff;
+}
+
+.download-btn {
+    background-color: #10b981;
+    border: 1px solid #10b981;
+    color: #ffffff;
+}
+
+.download-btn:hover {
+    background-color: #059669;
+    border-color: #059669;
+}
+
+/* ==========================================================================
+   استایل کارت‌های قفل شده (دوره‌های تمام نشده)
+   ========================================================================== */
+.cert-archive-card.locked-cert {
+    opacity: 0.65;
+    border-style: dashed;
+}
+
+.cert-archive-card.locked-cert:hover {
+    transform: none;
+    border-color: var(--border-color);
+}
+
+.locked-cert .cert-badge-box {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.cert-status-text {
+    color: #f59e0b;
+    font-weight: 700;
+}
+
+.continue-btn {
+    background-color: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+.continue-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    background-color: rgba(99, 102, 241, 0.05);
+}
+
+/* ==========================================================================
+   باکس راهنمای دریافت مدرک (پایین صفحه)
+   ========================================================================== */
+.cert-guide-box {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 25px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.guide-title-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.guide-icon {
+    font-size: 22px;
+}
+
+.guide-title-box h3 {
+    color: var(--text-main);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.guide-steps-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.guide-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.step-num {
+    width: 26px;
+    height: 26px;
+    background-color: rgba(99, 102, 241, 0.1);
+    color: var(--primary-color);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.guide-step p {
+    color: var(--text-muted);
+    font-size: 13.5px;
+    line-height: 1.6;
+}
+
+/* واکنش‌گرایی برای موبایل */
+@media (max-width: 768px) {
+    .cert-archive-card {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: right;
+        gap: 15px;
+    }
+    .cert-card-actions {
+        width: 100%;
+    }
+    .cert-btn {
+        flex: 1;
+        text-align: center;
+    }
+}
